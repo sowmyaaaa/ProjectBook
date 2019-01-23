@@ -1,0 +1,66 @@
+<!-- <mat-card>
+    <mat-card-title>    Content Selection</mat-card-title>
+    <mat-card-content>
+        <form>
+        <mat-radio-group [(ngModel)] = "enteredContentType">
+              <mat-radio-button value="Lesson">Lesson </mat-radio-button>
+              <mat-radio-button value="Poem">Poem</mat-radio-button>
+              <mat-error *ngIf="content.invalid">{{"Enter the details"}}</mat-error>
+            </mat-radio-group>
+            <div class="enterTitle"  required> 
+                <mat-form-field>
+                  <input matInput [(ngModel)] = "enteredTitle" placeholder="Enter Title" >
+                  <mat-error *ngIf="title.invalid">{{"Enter the details"}}</mat-error>
+                </mat-form-field>
+            </div>
+          <div class="preCheck">
+              <mat-checkbox [formControl] = "checkPre">Disable Pre-Reading Activity?</mat-checkbox>
+          </div>
+          <div class="preText"> 
+              <mat-form-field> 
+                <input matInput [disabled]="checkPre.value" [(ngModel)] = "enteredPreNum" placeholder="Number of Pre-Reading Activities">
+              </mat-form-field>
+          </div>
+          <div class="actCheck">
+              <mat-checkbox [formControl] = "checkAct">Disable exercises?</mat-checkbox>
+          </div>
+          <div class="actText"> 
+              <mat-form-field>
+                <input matInput [disabled]="checkAct.value" [(ngModel)] = "enteredActNum" placeholder="Number of Exercises">
+              </mat-form-field>
+          </div>
+          <button class="button" mat-raised-button colour="accent" (click)="onAddSelection()">Submit</button>   
+        </form>
+        </mat-card-content>
+   </mat-card>
+ -->
+
+ <mat-card tabindex="0">
+  <mat-card-title>    Content Selection</mat-card-title>
+  <mat-card-content>
+  <form (submit)="onAddPost(postForm)" #postForm="ngForm" routerlink = "/temp">
+      <mat-radio-group name = "content" ngModel #content = "ngModel">
+            <mat-radio-button value="Lesson">Lesson </mat-radio-button>
+            <mat-radio-button value="Poem" class = "poem">Poem</mat-radio-button>
+            <!-- <mat-error *ngIf="content.invalid">{{"Enter the details"}}</mat-error> -->
+          </mat-radio-group>
+          <div class="enterTitle"  required> 
+              <mat-form-field>
+                <input matInput name = "title" ngModel #title = "ngModel"  placeholder="Enter Title" >
+                <!-- <mat-error *ngIf="title.invalid">{{"Enter the details"}}</mat-error> -->
+              </mat-form-field>
+          </div>
+        <div class="preCheck">
+            <mat-checkbox>Disable Pre-Reading Activity?</mat-checkbox>
+        </div>
+        <div class="actCheck">
+            <mat-checkbox [formControl] = "checkAct">Disable exercises?</mat-checkbox>
+        </div>
+
+        <button class="button" mat-raised-button colour="accent" type="submit" routerLink = "/contentSelection">Submit</button>
+    
+      </form>  
+    </mat-card-content> 
+ </mat-card>
+
+

@@ -1,0 +1,29 @@
+<!-- <p>{{formDetails.eTitle}}</p>
+<p>{{formDetails.ePreNum}}</p> -->
+
+
+<!-- <mat-accordion multi="true" *ngIf="formDetails.length > 0">
+    <mat-expansion-panel *ngFor="let post of posts">
+      <mat-expansion-panel-header>
+        {{ form.eTitle }}
+      </mat-expansion-panel-header>
+      <p>{{ form.eContentType }}</p>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <p *ngIf="formDetails.length == 0">No posts added yet!</p> -->
+
+
+<mat-accordion multi="true" *ngIf="posts.length > 0">
+    <mat-expansion-panel *ngFor="let post of posts">
+      <mat-expansion-panel-header>
+        {{ post.eTitle }}
+      </mat-expansion-panel-header>
+      <p>{{ post.eContentType }}</p>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <!-- <p class="info-text mat-body-1" *ngIf="posts.length <= 0">No posts added yet!</p> -->
+
+
+
+<!-- <p *ngIf="posts.length > 0">{{ post.content }}</p>
+<p *ngIf="posts.length > 0">{{ post.title }}</p> -->
